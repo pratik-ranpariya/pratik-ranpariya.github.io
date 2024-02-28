@@ -1,4 +1,4 @@
-# Hello, I'm [Pratik Ranpariya] 👋
+# Hello, I'm Pratik Ranpariya 👋
 
 I'm a passionate Node.js backend developer with experience in building robust and scalable web applications. Welcome to my GitHub profile! Here you'll find a collection of projects, experiments, and contributions reflecting my journey in the world of backend development.
 
