@@ -28,7 +28,7 @@ for users to explore diverse content anonymously.
 
 2. [Dating App](https://spouze.co
 ) - Created and launched the dating site spouse.co, a platform for singles who are looking for long- term relationships. Developed the site's features, including profile creation, messaging, matching algorithms, purchase plan functionality, private profie, block users, delete account.
-3. [E-commerce single-vender](https://mantradiamonad.com) - This is an E-Commerce site Client. In this project, manage daily change gold and diamond rate. Also manage in Multiple images, video, gold rate, diamond rate, automatic catchup description, etc...
+3. [E-commerce single-vender](https://mantradiamond.com) - This is an E-Commerce site Client. In this project, manage daily change gold and diamond rate. Also manage in Multiple images, video, gold rate, diamond rate, automatic catchup description, etc...
 
 Feel free to explore my repositories to discover more!
 
