@@ -12,7 +12,7 @@ I'm a passionate Node.js backend developer with experience in building robust an
 ## Skills
 
 - **Languages:** JavaScript (Node.js), TypeScript
-- **Frameworks & Libraries:** Express.js, koa.js
+- **Frameworks & Libraries:** Next.js, React.js, Express.js, koa.js
 - **Databases:** MongoDB, PostgreSQL, MySQL
 - **Testing:** Jest, Mocha, Chai
 - **Tools & Platforms:** Git, Docker, AWS, Heroku
