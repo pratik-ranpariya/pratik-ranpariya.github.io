@@ -13,7 +13,7 @@ I'm a passionate Node.js backend developer with experience in building robust an
 
 - **Languages:** JavaScript (Node.js), TypeScript
 - **Frameworks & Libraries:** Next.js, React.js, Express.js, koa.js
-- **Databases:** MongoDB, PostgreSQL, MySQL
+- **Databases:** MongoDB, PostgreSQL, MySQL, Oracle
 - **Testing:** Jest, Mocha, Chai
 - **Tools & Platforms:** Git, Docker, AWS, Heroku
 
@@ -41,11 +41,3 @@ Feel free to explore my repositories to discover more!
 - Email: pratikranpariya007@gmail.com
 
 Let's connect and discuss exciting opportunities!
-
-## Support
-
-If you find any of my projects or contributions helpful, consider buying me a coffee!
-
-[![Buy Me A Coffee](link)](link)
-
-Thank you for visiting my GitHub profile! Have a great day! 🚀
