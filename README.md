@@ -43,6 +43,6 @@ Feel free to explore my repositories to discover more!
 Let's connect and discuss exciting opportunities!
 
  <p align="center">
-  <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=pratik-ranpariya&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=pratik-ranpariya&show_icons=true&theme=dark&include_all_commits=true&count_private=true&exclude_days=Sun%2CSat"/>
   <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=pratik-ranpariya&layout=compact&langs_count=8&theme=dark"/>
 </p>
