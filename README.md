@@ -1,10 +1,10 @@
 # Hello, I'm Pratik Ranpariya 👋
 
-I'm a passionate Node.js backend developer with experience in building robust and scalable web applications. Welcome to my GitHub profile! Here you'll find a collection of projects, experiments, and contributions reflecting my journey in the world of backend development.
+I'm a passionate Node.js backend & React/Next Frontend developer with experience in building robust and scalable web applications. Welcome to my GitHub profile! Here you'll find a collection of projects, experiments, and contributions reflecting my journey in the world of backend development.
 
 ## About Me
 
-- 💼 Currently working as a Node.js backend developer.
+- 💼 Currently working as a Senier Mern-stack developer.
 - 🌱 I’m continuously learning and exploring new technologies.
 - 👯 I’m open to collaboration on interesting projects.
 - 💬 Let's connect! Feel free to reach out to me.
