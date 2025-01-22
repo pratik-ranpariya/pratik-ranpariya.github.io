@@ -1,48 +1,44 @@
-# Hello, I'm Pratik Ranpariya 👋
+# vCard - Personal portfolio
 
-I'm a passionate Node.js backend & React/Next Frontend developer with experience in building robust and scalable web applications. Welcome to my GitHub profile! Here you'll find a collection of projects, experiments, and contributions reflecting my journey in the world of backend development.
+![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)
+![GitHub stars](https://img.shields.io/github/stars/codewithsadee/vcard-personal-portfolio?style=social)
+![GitHub forks](https://img.shields.io/github/forks/codewithsadee/vcard-personal-portfolio?style=social)
+[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
+[![YouTube Video Views](https://img.shields.io/youtube/views/SoxmIlgf2zM?style=social)](https://youtu.be/SoxmIlgf2zM)
 
-## About Me
+vCard is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
 
-- 💼 Currently working as a Senier Mern-stack developer.
-- 🌱 I’m continuously learning and exploring new technologies.
-- 👯 I’m open to collaboration on interesting projects.
-- 💬 Let's connect! Feel free to reach out to me.
+## Demo
 
-## Skills
+![vCard Desktop Demo](./website-demo-image/desktop.png "Desktop Demo")
+![vCard Mobile Demo](./website-demo-image/mobile.png "Mobile Demo")
 
-- **Languages:** JavaScript (Node.js), TypeScript
-- **Frameworks & Libraries:** Next.js, React.js, Express.js, koa.js
-- **Databases:** MongoDB, PostgreSQL, MySQL, Oracle
-- **Testing:** Jest, Mocha, Chai
-- **Tools & Platforms:** Git, Docker, AWS, Heroku
+## Prerequisites
 
-## Projects
+Before you begin, ensure you have met the following requirements:
 
-Here are some of the projects I've worked on:
+* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
 
-1. [Merit.am](https://merit.am) - Introducing an innovative anonymous social media app that prioritizes user privacy and engagement. This platform allows users to sign in seamlessly using Apple, Google, or a unique ID password. Users can share a variety of content, including images, videos, and text, along with the ability to use hashtags and format text in bold.
-• Maintaining anonymity is a key feature, ensuring that no user names are visible to others. The app also supports essential social interactions, such as liking and commenting on posts. Users can engage in threaded discussions through subcomments, enhancing the depth of conversations while preserving anonymity.
-• Additionally, the app features a "Trending Hashtags" section, allowing users to discover popular topics and join conversations without compromising their identity. This feature enhances the overall user experience by fostering community engagement and providing an avenue
-for users to explore diverse content anonymously.
+## Installing vCard
 
-2. [Dating App](https://spouze.co
-) - Created and launched the dating site spouse.co, a platform for singles who are looking for long- term relationships. Developed the site's features, including profile creation, messaging, matching algorithms, purchase plan functionality, private profie, block users, delete account.
-3. [E-commerce single-vender](https://mantradiamond.com) - This is an E-Commerce site Client. In this project, manage daily change gold and diamond rate. Also manage in Multiple images, video, gold rate, diamond rate, automatic catchup description, etc...
+To install **vCard**, follow these steps:
 
-Feel free to explore my repositories to discover more!
+Linux and macOS:
 
-## Get in Touch
+```bash
+sudo git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
+```
 
-- GitHub: [pratik-ranpariya](https://github.com/pratik-ranpariya)
-- LinkedIn: [pratik ranpariya](https://www.linkedin.com/in/pratik-patel-b88814284/)
-- upwork: [pratik ranpariya](https://www.upwork.com/freelancers/pratikranpariya)
-- medium: [pratik ranpariya](https://medium.com/@pratikranpariya007)
-- Email: pratikranpariya007@gmail.com
+Windows:
 
-Let's connect and discuss exciting opportunities!
+```bash
+git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
+```
 
- <p align="center">
-  <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=pratik-ranpariya&show_icons=true&theme=dark&include_all_commits=true&count_private=true&exclude_days=Sun%2CSat"/>
-  <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=pratik-ranpariya&layout=compact&langs_count=8&theme=dark"/>
-</p>
+## Contact
+
+If you want to contact me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
+
+## License
+
+MIT
