@@ -1627,7 +1627,7 @@ improve user engagement.</p>
   <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+    import { getAnalytics, setUserProperties, logEvent } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
 
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -1644,6 +1644,145 @@ improve user engagement.</p>
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
+    
+    // Store analytics globally for geolocation script
+    window.firebaseAnalytics = analytics;
+    window.firebaseSetUserProperties = setUserProperties;
+    window.firebaseLogEvent = logEvent;
+  </script>
+
+  <!-- Proxy and Geolocation Script -->
+  <script>
+    (function() {
+      // IMPORTANT: Firebase Analytics detects location from IP address server-side.
+      // To make Firebase show US location, you MUST use a VPN or proxy extension.
+      // This script helps with API calls but cannot change Firebase's IP detection.
+      
+      // Configuration: Override location to this country
+      const OVERRIDE_COUNTRY = 'US';
+      const OVERRIDE_COUNTRY_NAME = 'United States';
+      const OVERRIDE_REGION = 'California';
+      const OVERRIDE_CITY = 'San Francisco';
+      
+      // Proxy service configuration (for API calls only, not for Firebase Analytics)
+      // Option 1: Use a free CORS proxy (for API calls)
+      const USE_PROXY = false; // Set to true to use proxy for API calls
+      const PROXY_URL = 'https://api.allorigins.win/get?url='; // Free CORS proxy
+      
+      // Option 2: Use a paid proxy service (you'll need to configure this)
+      // const PROXY_URL = 'https://your-proxy-service.com/?url=';
+      
+      // Function to fetch through proxy
+      window.fetchThroughProxy = async function(url, options = {}) {
+        if (USE_PROXY) {
+          const proxiedUrl = PROXY_URL + encodeURIComponent(url);
+          return fetch(proxiedUrl, options).then(response => {
+            return response.json().then(data => {
+              // Parse the response from proxy
+              if (data.contents) {
+                return new Response(data.contents, {
+                  status: response.status,
+                  statusText: response.statusText,
+                  headers: response.headers
+                });
+              }
+              return response;
+            });
+          });
+        }
+        return fetch(url, options);
+      };
+      
+      // Function to get location through proxy (for API calls)
+      async function getLocationThroughProxy() {
+        try {
+          const url = 'https://ipapi.co/json/';
+          const response = USE_PROXY 
+            ? await window.fetchThroughProxy(url)
+            : await fetch(url);
+          
+          const data = await response.json();
+          
+          // Override the location data
+          return {
+            country: OVERRIDE_COUNTRY,
+            countryName: OVERRIDE_COUNTRY_NAME,
+            city: OVERRIDE_CITY,
+            region: OVERRIDE_REGION,
+            originalCountry: data.country_code || 'Unknown',
+            isOverridden: true
+          };
+        } catch (error) {
+          console.error('Error getting location:', error);
+          // Return overridden location as fallback
+          return {
+            country: OVERRIDE_COUNTRY,
+            countryName: OVERRIDE_COUNTRY_NAME,
+            city: OVERRIDE_CITY,
+            region: OVERRIDE_REGION,
+            isOverridden: true
+          };
+        }
+      }
+      
+      // Function to set overridden location in Firebase Analytics
+      function setLocationInFirebase() {
+        const checkFirebase = setInterval(() => {
+          if (window.firebaseAnalytics && window.firebaseSetUserProperties && window.firebaseLogEvent) {
+            clearInterval(checkFirebase);
+            
+            // Set user properties with overridden location
+            window.firebaseSetUserProperties(window.firebaseAnalytics, {
+              'user_country': OVERRIDE_COUNTRY,
+              'user_country_name': OVERRIDE_COUNTRY_NAME,
+              'user_region': OVERRIDE_REGION,
+              'user_city': OVERRIDE_CITY,
+              'location_override': 'true'
+            });
+            
+            // Log a custom event with location data
+            window.firebaseLogEvent(window.firebaseAnalytics, 'location_detected', {
+              'country': OVERRIDE_COUNTRY,
+              'country_name': OVERRIDE_COUNTRY_NAME,
+              'region': OVERRIDE_REGION,
+              'city': OVERRIDE_CITY
+            });
+            
+            console.log('Location set to:', OVERRIDE_COUNTRY, 'in Firebase Analytics (custom properties)');
+            console.warn('NOTE: Firebase Analytics still detects IP-based location. Use VPN/Proxy for actual US location.');
+          }
+        }, 100);
+        
+        setTimeout(() => clearInterval(checkFirebase), 5000);
+      }
+      
+      // Initialize location
+      getLocationThroughProxy().then(location => {
+        window.userLocation = location;
+        console.log('User Location (overridden):', window.userLocation);
+        
+        // Dispatch custom event
+        window.dispatchEvent(new CustomEvent('locationDetected', {
+          detail: window.userLocation
+        }));
+      });
+      
+      // Set location in Firebase Analytics
+      setLocationInFirebase();
+      
+      if (document.readyState === 'complete') {
+        setLocationInFirebase();
+      } else {
+        window.addEventListener('load', setLocationInFirebase);
+      }
+      
+      // Instructions for using VPN/Proxy
+      console.log('%cIMPORTANT: To make Firebase Analytics show US location:', 'color: red; font-weight: bold; font-size: 14px;');
+      console.log('1. Install a VPN extension (e.g., Windscribe, TunnelBear, or any VPN)');
+      console.log('2. Connect to a US server');
+      console.log('3. Reload the page');
+      console.log('4. Firebase Analytics will then detect US location based on your IP');
+    })();
   </script>
 
 </body>
