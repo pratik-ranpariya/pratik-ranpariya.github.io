@@ -1623,6 +1623,29 @@ improve user engagement.</p>
   gtag('config', 'G-0VPFX78D1P');
 </script>
 
+  <!-- Firebase Analytics -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAJL559mDryQ2Tq3nKT3tCOWnc7vR6Vw8s",
+      authDomain: "pratik-ranpariya.firebaseapp.com",
+      projectId: "pratik-ranpariya",
+      storageBucket: "pratik-ranpariya.firebasestorage.app",
+      messagingSenderId: "491514790894",
+      appId: "1:491514790894:web:8faf683db03804c2f984ff",
+      measurementId: "G-5GKKBSRJFS"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
 </body>
 
 </html>
